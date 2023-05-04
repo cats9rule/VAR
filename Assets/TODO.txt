@@ -1,0 +1,7 @@
+Import and refactor XROrigin to work with new Example XROrigin prefab
+Import and refactor if needed prefabs for games
+
+After this - Working project with 3 games and avatar (XROrigin)
+
+Create scene
+Add games
