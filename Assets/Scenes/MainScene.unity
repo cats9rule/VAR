@@ -2209,6 +2209,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 3582251534236788486}
+    - target: {fileID: 1338224012339098931, guid: 18dce3d6c9f374242a45143f286e07db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1338224012843284185, guid: 18dce3d6c9f374242a45143f286e07db,
         type: 3}
       propertyPath: m_RootOrder
@@ -2268,6 +2273,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338224012843284186, guid: 18dce3d6c9f374242a45143f286e07db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044629292780350829, guid: 18dce3d6c9f374242a45143f286e07db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044629292915904747, guid: 18dce3d6c9f374242a45143f286e07db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044629292934960236, guid: 18dce3d6c9f374242a45143f286e07db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342051241907621228, guid: 18dce3d6c9f374242a45143f286e07db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18dce3d6c9f374242a45143f286e07db, type: 3}
