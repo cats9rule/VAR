@@ -12,12 +12,36 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movement;
     public Transform TopLimit;
     public Transform BottomLimit;
-    public Transform SideLimit;
+    public Transform LeftLimit;
+    public Transform RightLimit;
+
+    private float top, bottom, left, right;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (LeftLimit.position.x < RightLimit.position.x)
+        {
+            left = LeftLimit.position.x;
+            right = RightLimit.position.x;
+        }
+        else
+        {
+            left = RightLimit.position.x;
+            right = LeftLimit.position.x;
+        }
+
+        if (BottomLimit.position.z < TopLimit.position.z)
+        {
+            top = TopLimit.position.z;
+            bottom = BottomLimit.position.z;
+        }
+        else
+        {
+            top = BottomLimit.position.z;
+            bottom = TopLimit.position.z;
+        }
     }
 
     // Update is called once per frame
@@ -27,9 +51,9 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         movement = new Vector3(z,0,-x);
         movement = Vector3.ClampMagnitude(movement, 1);*/
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -SideLimit.position.x, SideLimit.position.x),
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, left, right),
             transform.position.y,
-            Mathf.Clamp(transform.position.z, BottomLimit.position.z, TopLimit.position.z));
+            Mathf.Clamp(transform.position.z, bottom,top));
         //transform.Translate(movement*speed*Time.deltaTime);
     }
 

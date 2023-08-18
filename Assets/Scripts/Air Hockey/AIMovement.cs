@@ -17,9 +17,12 @@ public class AIMovement : MonoBehaviour
     
     public Transform TopLimit;
     public Transform BottomLimit;
-    public Transform SideLimit;
+    public Transform LeftLimit;
+    public Transform RightLimit;
 
     private bool isFirstTimeInOppontentsHalf = true;
+    
+    private float top, bottom, left, right;
 
     private float offsetXFromTarget;
     // Start is called before the first frame update
@@ -27,6 +30,26 @@ public class AIMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         startingPosition = rb.position;
+        if (LeftLimit.position.x < RightLimit.position.x)
+        {
+            left = LeftLimit.position.x;
+            right = RightLimit.position.x;
+        }
+        else
+        {
+            left = RightLimit.position.x;
+            right = LeftLimit.position.x;
+        }
+        if (BottomLimit.position.z < TopLimit.position.z)
+        {
+            top = TopLimit.position.z;
+            bottom = BottomLimit.position.z;
+        }
+        else
+        {
+            top = BottomLimit.position.z;
+            bottom = TopLimit.position.z;
+        }
     }
 
     // Update is called once per frame
@@ -49,7 +72,7 @@ public class AIMovement : MonoBehaviour
                     offsetXFromTarget = Random.Range(-0.275f, 0.275f);
                 }
                 movementSpeed = maxSpeed * UnityEngine.Random.Range(0.1f, 0.3f);
-                targetPosition = new Vector3(Mathf.Clamp(puckRb.position.x + offsetXFromTarget,-SideLimit.position.x,SideLimit.position.x),
+                targetPosition = new Vector3(Mathf.Clamp(puckRb.position.x + offsetXFromTarget,left,right),
                         rb.position.y,
                         startingPosition.z)
                     ;
@@ -58,9 +81,9 @@ public class AIMovement : MonoBehaviour
             {
                 isFirstTimeInOppontentsHalf = true;
                 movementSpeed = UnityEngine.Random.Range(maxSpeed*0.4f,maxSpeed);
-                targetPosition = new Vector3(Mathf.Clamp(puckRb.position.x,-SideLimit.position.x,SideLimit.position.x),
+                targetPosition = new Vector3(Mathf.Clamp(puckRb.position.x,left,right),
                         rb.position.y,
-                        Mathf.Clamp(puckRb.position.z ,BottomLimit.position.z,TopLimit.position.z))
+                        Mathf.Clamp(puckRb.position.z ,bottom,top))
                     ;
             }
             rb.MovePosition(Vector3.MoveTowards(rb.position,targetPosition,movementSpeed*Time.deltaTime));

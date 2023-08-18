@@ -15,7 +15,7 @@ public class PuckScript : MonoBehaviour
     public float MaxSpeed;
 
     public AudioManager audioManager;
-    
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -60,9 +60,10 @@ public class PuckScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed);
-        if(Mathf.Abs(rb.position.x)>SideLimit.position.x)
+        
+        if(Mathf.Abs(transform.localPosition.x)>SideLimit.localPosition.x)
             StartCoroutine(ResetPuck(resetPositionPlayer.position));
-        if(Math.Abs(rb.position.z)>TopLimit.position.z)
+        if(Math.Abs(transform.localPosition.z)>TopLimit.localPosition.z)
             StartCoroutine(ResetPuck(resetPositionPlayer.position));
     }
     public void ResetPuckToPlayer()
