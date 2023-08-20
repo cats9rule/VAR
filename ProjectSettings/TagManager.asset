@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - M1911 Magazine
+  - Bullet
   layers:
   - Default
   - TransparentFX
