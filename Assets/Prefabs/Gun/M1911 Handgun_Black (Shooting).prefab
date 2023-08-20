@@ -1318,6 +1318,7 @@ GameObject:
   - component: {fileID: 8816849034726821973}
   - component: {fileID: 8816849034726821971}
   - component: {fileID: 8816849034726821972}
+  - component: {fileID: 1187606402}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1407,6 +1408,19 @@ MonoBehaviour:
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
   targetTag: M1911 Magazine
+--- !u!114 &1187606402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816849034726821974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2d62e75ce9d224182d617f9c1d3d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 4126064828383428376}
 --- !u!1 &8816849035188975816
 GameObject:
   m_ObjectHideFlags: 0
