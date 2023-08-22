@@ -15,7 +15,7 @@ public class CoinBehaviour : MonoBehaviour
     IEnumerator Move(Transform coinSlot,Action<CoinBehaviour> onFinished)
     {
         var step = speed * Time.deltaTime;
-        while (Vector3.Distance(transform.position, coinSlot.position) < 0.01f)
+        while (Vector3.Distance(transform.position, coinSlot.position) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position,coinSlot.position,step);
             yield return null;

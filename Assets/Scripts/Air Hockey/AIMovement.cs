@@ -64,7 +64,10 @@ public class AIMovement : MonoBehaviour
         {
             float movementSpeed;
             Vector3 targetPosition;
-            if (puckRb.position.z < BottomLimit.position.z)
+            Debug.Log("puck"+puckRb.position.z);
+            Debug.Log("bottom limit"+bottom);
+            
+            if (puckRb.position.z < bottom)
             {
                 if (isFirstTimeInOppontentsHalf)
                 {

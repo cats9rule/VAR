@@ -45,9 +45,9 @@ public class CoinSlot : XRBaseInteractable
 
     private void AddCoin()
     {
-        var coinObject = Instantiate(coin, transform);
+        var coinObject = Instantiate(coin, transform.position,transform.rotation);
         source.Play();
         clawMachine.AddCoin();
-        coinObject.MoveToSlot(transform,action => {Destroy(coinObject);});
+        coinObject.MoveToSlot(coinSlot,action => {Destroy(coinObject.gameObject);});
     }
 }
