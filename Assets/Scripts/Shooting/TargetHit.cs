@@ -12,6 +12,8 @@ public class TargetHit : MonoBehaviour
 
     public TMP_Text scoreDisplay;
 
+    private int currentWeapon = 0; // 0 - none, 1 - gun, 2 - bow
+
     void Start()
     {
         targetCenter = transform.position;
@@ -35,5 +37,24 @@ public class TargetHit : MonoBehaviour
         totalPoints += Convert.ToInt32(points);
 
         scoreDisplay.text = $"Score: {totalPoints}";
+    }
+
+    public void StartGunShooting()
+    {
+        if (currentWeapon != 1) ResetGame();
+        currentWeapon = 1;
+    }
+
+    public void StartBowShooting()
+    {
+        if (currentWeapon != 2) ResetGame();
+        currentWeapon = 2;
+    }
+
+    public void ResetGame()
+    {
+        totalPoints = 0;
+        scoreDisplay.text = $"Score: {totalPoints}";
+        currentWeapon = 0;
     }
 }
