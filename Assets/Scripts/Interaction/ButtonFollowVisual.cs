@@ -38,7 +38,7 @@ public class ButtonFollowVisual : MonoBehaviour
             XRPokeInteractor interactor = (XRPokeInteractor) hover.interactorObject;
 
             isFollowing = true;
-            freeze = false;
+            //freeze = false;
             
             pokeAttachTransform = interactor.attachTransform;
             offset = visualTarget.position - pokeAttachTransform.position;
