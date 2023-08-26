@@ -388,7 +388,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  speed: 1500
+  speed: 2500
 --- !u!114 &6072647748450659436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
   tip: {fileID: 8386148805111352677}
   layerMask:
     serializedVersion: 2
-    m_Bits: 2035
+    m_Bits: 1011
 --- !u!54 &3544760493190169588
 Rigidbody:
   m_ObjectHideFlags: 0

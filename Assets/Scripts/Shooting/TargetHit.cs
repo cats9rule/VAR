@@ -37,6 +37,8 @@ public class TargetHit : MonoBehaviour
         totalPoints += Convert.ToInt32(points);
 
         scoreDisplay.text = $"Score: {totalPoints}";
+        
+        Destroy(other.gameObject);
     }
 
     public void StartGunShooting()
